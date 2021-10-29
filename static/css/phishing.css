@@ -1,0 +1,83 @@
+body{
+    background-image: url("cybersecurity-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Rubik', sans-serif;
+    text-shadow: 2px 2px #50fc00;
+    margin-top: 0.4em;
+}
+
+#divStyle{
+    width: 65%;
+    margin: 100px auto;
+    margin-bottom: 4em;
+}
+
+#urlReq{
+    font-size: 1.2em;
+    margin:1em auto;
+    outline: none;
+    box-shadow: none;
+}
+
+label{
+	font-family: 'Karla', sans-serif;
+	font-weight:bolder;
+	color:cornflowerblue;
+    font-size: 2.2em;
+    text-shadow: 1px 1px crimson;
+}
+
+
+form{
+    text-align: center;
+    margin: 2em;
+}
+
+button{
+    width: 20em;
+    font-weight: bolder;
+    margin: 1.5em;
+}
+
+.btn:focus{
+    outline:none;
+    box-shadow: none;
+}
+
+h3{
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Karla', sans-serif;
+    color:white;
+    text-shadow: 4px 4px black;
+    transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.progressBar{
+    display: none;    
+    text-align: center;
+    margin: 2em;
+}
+
+button{
+    margin: 1em;
+    width:14em;
+}
+
+p{
+    color:gold;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#invertedUp, #invertedDown{
+    transform: scaleX(-1);
+}

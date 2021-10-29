@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/phishing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700&family=Rubik:ital,wght@1,800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9357877881.js" crossorigin="anonymous"></script>
+    <title>Phishing Website Detector</title>
+</head>
+<body>
+    <h1>PHISHING WEBSITE DETECTOR</h1>
+    <div class="container bg-dark border border-success" id="divStyle">
+        <form name="passData" action="/predict" method='POST'>
+            <div class="mb-3">
+                <label for="urlReq" class="form-label">-Enter any URL to test-</label>
+                <input type="text" name="urlName" class="form-control rounded-pill" id="urlReq" aria-describedby="urlReq" placeholder="Copy and paste link here" aria-describedby="basic-addon1">
+            </div>
+            <div>
+                <button id="testUrl" type="submit" class="btn btn-outline-success">Test URL</button>
+                <button id="reset" type="button" class="btn btn-outline-danger">Reset</button>       
+            </div>
+        </form>
+        <div class='progressBar'>
+            <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </div>
+        
+        <!-- <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>-->
+    <div id="displayEle">
+        <h3 {% if pred == "Secure" %} style="color:chartreuse;"
+        {% elif pred == "Not Secure" %} style="color: red;" {% endif %}>
+            {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i>
+            {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down" id="invertedDown"></i> {% endif %}
+            {{pred}}
+            {% if pred=="Secure" %} <i class="fas fa-thumbs-up"></i>
+            {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down"></i> {% endif %}
+        </h3>
+        <p>{{urlDisplay}}</p>
+    </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="static/js/phishing.js" language="JavaScript" type="text/javascript" ></script>
+</body>
+</html>
