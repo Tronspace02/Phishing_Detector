@@ -16,6 +16,6 @@ $("#reset").on("click",function(){
         // Animation complete.
         triggerEmpty();
         $("form").trigger("reset");
-        window.location.href="https://phishing-website-detector.herokuapp.com/"
+        window.location.href="/"
       });
 });
