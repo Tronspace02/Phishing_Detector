@@ -13,16 +13,17 @@ def predict():
     phish_model = open('phishing.pkl','rb')
     phish_model_ls = joblib.load(phish_model)
     urlName=request.form.get('urlName')
-    urlReplace=str(urlName).replace('https://','').replace('http://','')
+    urlNameStrip=urlName.strip()
+    urlReplace=str(urlNameStrip).replace('https://','').replace('http://','')
     predictUrl=[urlReplace]
     prediction=phish_model_ls.predict(predictUrl)
 
     if predictUrl==['']:
         return render_template('phishing.html',pred='-Field Empty-')
     elif prediction==['good']:
-        return render_template('phishing.html',pred='Secure',urlDisplay=[urlName])
+        return render_template('phishing.html',pred='Secure',urlDisplay=[urlNameStrip])
     elif prediction==['bad']:
-        return render_template('phishing.html',pred='Not Secure',urlDisplay=[urlName])
+        return render_template('phishing.html',pred='Not Secure',urlDisplay=[urlNameStrip])
 
 
 if __name__ == '__main__':
