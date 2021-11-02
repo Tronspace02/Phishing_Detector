@@ -21,8 +21,8 @@
                 <input type="text" name="urlName" class="form-control rounded-pill" id="urlReq" aria-describedby="urlReq" placeholder="Copy and paste link here" aria-describedby="basic-addon1">
             </div>
             <div class="col">
-                <button id="testUrl" type="submit" class="btn btn-outline-success col-4">Test URL</button>
-                <button id="reset" type="button" class="btn btn-outline-danger col-4">Reset</button>       
+                <button id="testUrl" type="submit" class="btn btn-outline-success col-sm-3 col-6">Test URL</button>
+                <button id="reset" type="button" class="btn btn-outline-danger col-sm-3 col-6">Reset</button>       
             </div>
         </form>
         <div class='col progressBar'>
@@ -40,17 +40,17 @@
         <!-- <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>-->
-    <div class="col" id="displayEle">
-        <h3 {% if pred == "Secure" %} style="color:chartreuse;"
-        {% elif pred == "Not Secure" %} style="color: red;" {% endif %}>
-            {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i>
-            {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down" id="invertedDown"></i> {% endif %}
-            {{pred}}
-            {% if pred=="Secure" %} <i class="fas fa-thumbs-up"></i>
-            {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down"></i> {% endif %}
-        </h3>
-        <p>{{urlDisplay}}</p>
-    </div>
+        <div class="col" id="displayEle">
+            <h3 {% if pred == "Secure" %} style="color:chartreuse;"
+            {% elif pred == "Not Secure" %} style="color: red;" {% endif %}>
+                {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i>
+                {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down" id="invertedDown"></i> {% endif %}
+                {{pred}}
+                {% if pred=="Secure" %} <i class="fas fa-thumbs-up"></i>
+                {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down"></i> {% endif %}
+            </h3>
+            <p>{{urlDisplay}}</p>
+        </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
