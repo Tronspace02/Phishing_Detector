@@ -14,18 +14,18 @@
 </head>
 <body>
     <h1>PHISHING WEBSITE DETECTOR</h1>
-    <div class="container bg-dark border border-success" id="divStyle">
+    <div class="container-fluid bg-dark border border-success" id="divStyle">
         <form name="passData" action="/predict" method='POST'>
-            <div class="mb-3">
+            <div class="col">
                 <label for="urlReq" class="form-label">-Enter any URL to test-</label>
                 <input type="text" name="urlName" class="form-control rounded-pill" id="urlReq" aria-describedby="urlReq" placeholder="Copy and paste link here" aria-describedby="basic-addon1">
             </div>
-            <div>
-                <button id="testUrl" type="submit" class="btn btn-outline-success">Test URL</button>
-                <button id="reset" type="button" class="btn btn-outline-danger">Reset</button>       
+            <div class="col">
+                <button id="testUrl" type="submit" class="btn btn-outline-success col-4">Test URL</button>
+                <button id="reset" type="button" class="btn btn-outline-danger col-4">Reset</button>       
             </div>
         </form>
-        <div class='progressBar'>
+        <div class='col progressBar'>
             <div class="spinner-grow text-success" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
@@ -40,7 +40,7 @@
         <!-- <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>-->
-    <div id="displayEle">
+    <div class="col" id="displayEle">
         <h3 {% if pred == "Secure" %} style="color:chartreuse;"
         {% elif pred == "Not Secure" %} style="color: red;" {% endif %}>
             {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i>
