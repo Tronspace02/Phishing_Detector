@@ -43,8 +43,8 @@
         <div class="col" id="displayEle">
             <h3 {% if pred == "Secure" %} style="color:chartreuse;"
             {% elif pred == "Not Secure" %} style="color: red;" {% endif %}>
-                {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i>
-                {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down" id="invertedDown"></i> {% endif %}
+                {% if pred=="Secure" %} <i class="fas fa-thumbs-up" id="invertedUp"></i><audio autoplay src="/static/audio/correct.mp3"></audio>
+                {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down" id="invertedDown"></i><audio autoplay src="/static/audio/wrong.mp3"></audio> {% endif %}
                 {{pred}}
                 {% if pred=="Secure" %} <i class="fas fa-thumbs-up"></i>
                 {% elif pred=="Not Secure" %} <i class="fas fa-thumbs-down"></i> {% endif %}
