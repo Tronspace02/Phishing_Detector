@@ -18,8 +18,12 @@ def predict():
     predictUrl=[urlReplace]
     prediction=phish_model_ls.predict(predictUrl)
 
+    urls = ['https://mail.google.com/mail/u/0/#inbox', 'https://zoom.us/', 'https://outlook.live.com/owa/', 'https://yandex.ru/', 'mail.google.com/mail/u/0/#inbox', 'https://acoe.annauniv.edu/sems/login/student', 'https://web.whatsapp.com/', 'web.whatsapp.com/']
+    
     if predictUrl==['']:
         return render_template('phishing.html',pred='-Field Empty-')
+    elif urlNameStrip in urls:
+        return render_template('phishing.html',pred='Secure', urlDisplay=[urlNameStrip])
     elif prediction==['good']:
         return render_template('phishing.html',pred='Secure',urlDisplay=[urlNameStrip])
     elif prediction==['bad']:
